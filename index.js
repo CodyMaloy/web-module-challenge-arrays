@@ -46,8 +46,8 @@ Use the copy function below to do the following:
 */
 
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(flavors){
+  return [...flavors]
 }
 
 
@@ -63,9 +63,11 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-  /*your code here*/
- }
+function is31Flavors(originalFlavors) {
+  return originalFlavors.length === 31
+}
+  
+ 
 
 
 
@@ -82,8 +84,9 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
+function addFlavor(originalFlavors){
+  originalFlavors.unshift("Rainbow Sherbert");
+  return originalFlavors
  }
 
 
@@ -100,8 +103,9 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(originalFlavors){
+originalFlavors.pop();
+return originalFlavors
 }
 
 
@@ -118,8 +122,8 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(originalFlavors) {
+  return originalFlavors[2];
 }
 
 
@@ -138,10 +142,13 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(originalFlavors){
+  const index = originalFlavors.indexOf("Vanilla");
+  if (index !== -1) {
+    originalFlavors.splice(index, 1);
+  }  
+  return originalFlavors;
 }
-
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -163,10 +170,15 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(originalFlavors) {
+  const filteredFlavors = [];
+  for(let i = 0; i < originalFlavors.length; i++) {
+    if(originalFlavors[i].includes('Chocolate')) {
+      filteredFlavors.push(originalFlavors[i]);
+    }
+  }
+  return filteredFlavors
 }
-
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
